@@ -1,5 +1,6 @@
-﻿  N-dim Array with stride.cpp
-C:\Users\SAMSUNG\Desktop\c++ study\C++ basis study again\cpp_basis\cpp_basis\N-dim Array with stride.cpp(47,34): warning C4244: 'return': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  cpp_basis.vcxproj -> C:\Users\SAMSUNG\Desktop\c++ study\C++ basis study again\cpp_basis\x64\Debug\cpp_basis.exe
-  'pwsh.exe'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
-  배치 파일이 아닙니다.
+﻿  My_Excel.cpp
+C:\Users\lsw\Desktop\cpp_study\C-new-Study\C++ basis study again\cpp_basis\cpp_basis\My_Excel.cpp(287,52): warning C4267: '=': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\lsw\Desktop\cpp_study\C-new-Study\C++ basis study again\cpp_basis\cpp_basis\My_Excel.cpp(303,39): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\lsw\Desktop\cpp_study\C-new-Study\C++ basis study again\cpp_basis\cpp_basis\My_Excel.cpp(316,32): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\lsw\Desktop\cpp_study\C-new-Study\C++ basis study again\cpp_basis\cpp_basis\My_Excel.cpp(331,40): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  cpp_basis.vcxproj -> C:\Users\lsw\Desktop\cpp_study\C-new-Study\C++ basis study again\cpp_basis\x64\Debug\cpp_basis.exe

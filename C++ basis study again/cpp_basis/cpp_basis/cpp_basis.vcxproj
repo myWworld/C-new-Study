@@ -127,13 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="MyString.h" />
+    <ClInclude Include="MyVector.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Complex.cpp" />
+    <ClCompile Include="EmployeeManager.cpp" />
+    <ClCompile Include="MyVector.cpp" />
+    <ClCompile Include="My_Excel.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="N-dim Array with stride.cpp" />
     <ClCompile Include="N-dimArray.cpp" />
+    <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
