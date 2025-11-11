@@ -5,7 +5,7 @@ Vector::Vector(int n) : data(new std::string[n]), capacity(n), length(0)
 
 }
 
-void Vector::push_back(std::string& s)
+void Vector::push_back(std::string s)
 {
 	if (capacity <= length)
 	{

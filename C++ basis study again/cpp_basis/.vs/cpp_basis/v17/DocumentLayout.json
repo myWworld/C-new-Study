@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyVector.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|solutionrelative:cpp_basis\\MyVector.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\Stack.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|solutionrelative:cpp_basis\\Stack.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyVector.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|solutionrelative:cpp_basis\\MyVector.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\My_Excel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|solutionrelative:cpp_basis\\My_Excel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,16 +23,8 @@
       "RelativeMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|solutionrelative:cpp_basis\\Stack.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\Stack.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|solutionrelative:cpp_basis\\Stack.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\N-dim Array with stride.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|solutionrelative:cpp_basis\\N-dim Array with stride.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyVector.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|solutionrelative:cpp_basis\\MyVector.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyString.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\N-dimArray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|solutionrelative:cpp_basis\\N-dimArray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyVector.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|solutionrelative:cpp_basis\\MyVector.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18B42FFE-15BC-41F3-B0CE-EF97794B2336}|cpp_basis\\cpp_basis.vcxproj|C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\EmployeeManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "MyVector.h",
+              "DocumentMoniker": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyVector.h",
+              "RelativeDocumentMoniker": "cpp_basis\\MyVector.h",
+              "ToolTip": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyVector.h",
+              "RelativeToolTip": "cpp_basis\\MyVector.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-02T11:22:41.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Stack.cpp",
               "DocumentMoniker": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\Stack.cpp",
               "RelativeDocumentMoniker": "cpp_basis\\Stack.cpp",
@@ -66,49 +79,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Stack.h",
               "DocumentMoniker": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\Stack.h",
               "RelativeDocumentMoniker": "cpp_basis\\Stack.h",
               "ToolTip": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\Stack.h",
               "RelativeToolTip": "cpp_basis\\Stack.h",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwC0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-09T13:21:48.529Z"
+              "WhenOpened": "2025-11-09T13:21:48.529Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MyVector.h",
-              "DocumentMoniker": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyVector.h",
-              "RelativeDocumentMoniker": "cpp_basis\\MyVector.h",
-              "ToolTip": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyVector.h",
-              "RelativeToolTip": "cpp_basis\\MyVector.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-02T11:22:41.559Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "MyVector.cpp",
               "DocumentMoniker": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyVector.cpp",
               "RelativeDocumentMoniker": "cpp_basis\\MyVector.cpp",
               "ToolTip": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyVector.cpp",
               "RelativeToolTip": "cpp_basis\\MyVector.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-09T13:17:05.545Z"
+              "WhenOpened": "2025-11-09T13:17:05.545Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "My_Excel.cpp",
               "DocumentMoniker": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\My_Excel.cpp",
               "RelativeDocumentMoniker": "cpp_basis\\My_Excel.cpp",
               "ToolTip": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\My_Excel.cpp",
               "RelativeToolTip": "cpp_basis\\My_Excel.cpp",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAYwFQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAmwPYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-09T12:14:15.67Z",
               "EditorCaption": ""
@@ -127,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "N-dim Array with stride.cpp",
               "DocumentMoniker": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\N-dim Array with stride.cpp",
               "RelativeDocumentMoniker": "cpp_basis\\N-dim Array with stride.cpp",
@@ -139,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "N-dimArray.cpp",
               "DocumentMoniker": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\N-dimArray.cpp",
               "RelativeDocumentMoniker": "cpp_basis\\N-dimArray.cpp",
@@ -151,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "MyString.cpp",
               "DocumentMoniker": "C:\\Users\\lsw\\Desktop\\cpp_study\\C-new-Study\\C\u002B\u002B basis study again\\cpp_basis\\cpp_basis\\MyString.cpp",
               "RelativeDocumentMoniker": "cpp_basis\\MyString.cpp",

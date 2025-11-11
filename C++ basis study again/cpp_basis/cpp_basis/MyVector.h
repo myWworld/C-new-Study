@@ -12,13 +12,13 @@ public:
 
 	Vector(int n = 1);
 
-	void push_back(std::string& s);
+	void push_back(std::string s);
 	
 	std::string operator[](const int i);
 
 	void remove(int x);
 
-	int size();
-
+	int size() { return length; };
+	
 	~Vector();
 };

@@ -8,18 +8,159 @@ class Table;
 
 class Cell
 {
+protected:
+
 	Table* table;
-	std::string data;
 	int x, y;
 
 public:
 
-	Cell(const std::string& data, int x, int y, Table* table) : data(data), x(x), y(y), table(table) {}
+	Cell( int x, int y, Table* table) :  x(x), y(y), table(table) {}
 
-	virtual std::string stringify();
-	virtual int to_numeric();
+	virtual std::string stringify() = 0;
+	virtual int to_numeric() = 0;
 
 };
+
+class StringCell : public  Cell
+{
+	std::string data;
+
+public:
+
+	StringCell(const std::string& data, int x, int y, Table* t) :Cell(x, y, t), data(data){}
+	std::string stringify() { return data; };
+	int to_numeric() { return 0; };
+};
+
+class NumberCell : public  Cell
+{
+	int data;
+
+public:
+
+	NumberCell(int  data, int x, int y, Table* t) :Cell(x, y, t), data(data) {}
+	std::string stringify() { return std::to_string(data); };
+	int to_numeric() { return data; };
+};
+
+class DateCell : public  Cell
+{
+	std::time_t data;
+
+public:
+
+	DateCell(const std::string& s, int x, int y, Table* t) :Cell(x, y, t), data(data)
+	{
+		int year = atoi(s.c_str());
+		int month = atoi(s.c_str() + 5);
+		int day = atoi(s.c_str() + 8);
+
+		tm timeinfo;
+
+		timeinfo.tm_year = year - 1900;
+		timeinfo.tm_mon = month - 1;
+		timeinfo.tm_mday = day;
+		timeinfo.tm_hour = 0;
+		timeinfo.tm_min = 0;
+		timeinfo.tm_sec = 0;
+
+		data = mktime(&timeinfo);
+	}
+	std::string stringify()
+	{
+		char buf[50];
+		tm temp;
+		localtime_s(&temp, &data);
+
+		strftime(buf, 50, "%F", &temp);
+
+		return std::string(buf);
+	}
+
+	int to_numeric()
+	{
+		return static_cast<int> (data);
+	}
+};
+
+class ExprCell : public Cell
+{
+	std::string data;
+	std::string* parsed_expr;
+
+	Vector exp_vec;
+
+	int precedence(char c)
+	{
+		switch (c)
+		{
+		case '(':
+		case '[':
+		case '{':
+			return 0;
+		case '+':
+		case '-':
+			return 1;
+		case '*':
+		case '/':
+			return 2;
+		}
+
+		return 0;
+	}
+
+	void parse_expression()
+	{
+		Stack stack;
+
+		data.insert(0, "(");
+		data.push_back(')');
+
+		for (int i = 0; i < data.length(); i++)
+		{
+			if (isalpha(data[i])) {
+				exp_vec.push_back(data.substr(i, 2));
+				i++;
+			}
+			else if (isdigit(data[i]))
+			{
+				exp_vec.push_back(data.substr(i, 1));
+			}
+			else if (data[i] == '(' || data[i] == '[' || data[i] == '{')
+			{
+				stack.push(data.substr(i, 1));
+			}
+			else if (data[i] == ')' || data[i] == ']' || data[i] == '}')
+			{
+				std::string t = stack.pop();
+				while (t != "(" || t != "[" || t != "{")
+				{
+					exp_vec.push_back(t);
+					t = stack.pop();
+				}
+			}
+			else if (data[i] == '+' || data[i] == '-' || data[i] == '*' || data[i] == ' / ')
+			{
+				while (!stack.is_empty() && precedence(stack.peek()[0]) >= precedence(data[i]))
+				{
+					exp_vec.push_back(stack.pop());
+						
+				}
+				stack.push(data.substr(i, 1));
+			}
+		}
+	}
+
+
+public:
+
+	ExprCell(std::string data, int x, int y, Table* t): data(data), Cell(x,y,t){}
+
+	std::string stringify() { return data; };
+	int to_numeric();
+};
+
 
 class Table
 {
@@ -46,6 +187,7 @@ public:
 
 	}
 
+	friend std::ostream& operator <<(std::ostream& o, Table& t);
 
 	void reg_cell(Cell* c, int row, int col);
 
@@ -82,15 +224,65 @@ public:
 
 };
 
-
-std::string Cell::stringify()
+class Excel
 {
-	return data;
-}
+	Table* current_table;
 
-int Cell::to_numeric()
+
+public:
+
+	Excel(int max_row, int max_col, int choice);
+
+	int parse_user_input(std::string s);
+	void command_line();
+};
+
+
+
+int ExprCell::to_numeric()
 {
-	return 0;
+	double result = 0;
+	NumStack stack;
+
+	for (int i = 0; i < exp_vec.size(); i++)
+	{
+		std::string s = exp_vec[i];
+
+		if (isalpha(s[0]))
+		{
+			stack.push(table->to_numeric(s));
+
+		}
+		else if(isdigit(s[0]))
+		{
+			stack.push(atoi(s.c_str()));
+		}
+		else
+		{
+			double x = stack.pop();
+			double y = stack.pop();
+
+			switch (s[0])
+			{
+			case '+':
+				stack.push(x + y);
+				break;
+			case '-':
+				stack.push(x - y);
+				break;
+			case '*':
+				stack.push(x * y);
+				break;
+			case '/':
+				stack.push(x / y);
+				break;
+			}
+		}
+
+		
+	}
+
+	return stack.pop();
 }
 
 class TxtTable : public Table
@@ -123,6 +315,23 @@ public:
 	std::string print_table();
 
 };
+
+
+Excel::Excel(int max_row, int max_col, int choice = 0)
+{
+	switch (choice)
+	{
+	case 0:
+		current_table = new TxtTable(max_row, max_col);
+		break;
+	case 1:
+		current_table = new CSVTable(max_row, max_col);
+		break;
+	case 2:
+		current_table = new HTMLTable(max_row, max_col);
+		break;
+	}
+}
 
 void Table::reg_cell(Cell* c, int row, int col)
 {
@@ -192,6 +401,94 @@ std::string Table::stringify(int x, int y)
 
 }
 
+int Excel::parse_user_input(std::string s)
+{
+	int next = 0;
+	std::string command = "";
+
+	for (int i = 0; i < s.length(); i++)
+	{
+		if (s[i] == ' ')
+		{
+			command = s.substr(0, i);
+			next = i + 1;
+			break;
+		}
+		else if (i == s.length() - 1)
+		{
+			command = s.substr(0, i + 1);
+			next = i + 1;
+			break;
+		}
+	}
+
+	std::string to = "";
+
+	for (int i = next; i < s.length(); i++)
+	{
+		if (s[i] == ' ' || i == s.length() - 1)
+		{
+			to = s.substr(next, i - next);
+			next = i + 1;
+			break;
+		}
+		else if (i == s.length() - 1)
+		{
+			to = s.substr(0, i + 1);
+			next = i + 1;
+			break;
+		}
+
+	}
+
+	int col = to[0] - 'A';
+	int row = atoi(to.c_str() + 1) - 1;
+
+	std::string rest = s.substr(next);
+
+	if (command == "sets")
+	{
+		current_table->reg_cell(new StringCell(rest, row, col, current_table), row, col);
+	}
+	else if (command == "setn")
+	{
+		current_table->reg_cell(new NumberCell(atoi(rest.c_str()), row, col, current_table), row, col);
+	}
+	else if (command == "setd")
+	{
+		current_table->reg_cell(new DateCell(rest, row, col, current_table), row, col);
+	}
+	else if (command == "sete")
+	{
+		current_table->reg_cell(new ExprCell(rest, row, col, current_table), row, col);
+	}
+	else if (command == "out")
+	{
+		std::ofstream out(to);
+		out << *current_table;
+		std::cout << " 에 내용이 저장되었습니다." << std::endl;
+	}
+	else if (command == "exit")
+	{
+		return 0;
+	}
+
+	return 1;
+}
+
+void Excel::command_line()
+{
+	std::string s;
+	std::getline(std::cin, s);
+
+	while (parse_user_input(s))
+	{
+		std::cout << *current_table << std::endl << ">> ";
+		std::getline(std::cin, s);
+	}
+}
+
+
 std::ostream& operator <<(std::ostream& o, Table& t)
 {
 	o << t.print_table();
@@ -202,27 +499,16 @@ std::ostream& operator <<(std::ostream& o, Table& t)
 
 int main()
 {
-	TxtTable table(5, 5);
-	std::ofstream out("test.txt");
+	std::cout << "테이블(타입) (최대 행 크기) (최대 열 크기) 를 순서대로 입력해주세요" << std::endl;
+	std::cout << "* 참고 *" << std::endl;
+	std::cout << "1 : 텍스트 테이블, 2 : CSV 테이블 , 3 : HTML 테이블" << std::endl;
 
-	table.reg_cell(new Cell("Hello~", 0, 0, &table), 0, 0);
-	table.reg_cell(new Cell("C++", 0, 1, &table), 0, 1);
-	table.reg_cell(new Cell("Programming", 1,1 , &table), 1,1);
+	int type, max_row, max_col;
 
-	std::cout << std::endl << table;
-	out << table;
+	std::cin >> type >> max_row >> max_col;
 
-	HTMLTable table2(5, 5);
-	std::ofstream out2("test.html");
-
-	table2.reg_cell(new Cell("Hello~", 0, 0, &table2), 0, 0);
-	table2.reg_cell(new Cell("C++", 0, 1, &table2), 0, 1);
-	table2.reg_cell(new Cell("Programming", 1, 1, &table2), 1, 1);
-
-	std::cout << std::endl << table2;
-	out2 << table2;
-
-	
+	Excel m(max_row, max_col, type - 1);
+	m.command_line();
 
 	return 0;
 }
