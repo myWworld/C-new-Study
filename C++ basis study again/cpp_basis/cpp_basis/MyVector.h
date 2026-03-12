@@ -211,13 +211,87 @@ T add_num(T t)
 	return t + a;
 }
 
-
-int main()
+template<typename T>
+void print(T arg)
 {
-	int a = 9;
-	std::cout <<  add_num<int, 5>(a);
-	std::cout << add_num<int>(a);
+	std::cout << arg << std::endl;
+}
 
-
+template<typename T, typename... Types>
+void print(T arg, Types... args)
+{
+	std::cout << arg << " , ";
+	print(args...);
 
 }
+
+template<typename String>
+std::string StrCat(const String& s)
+{
+	return std::string(s);
+}
+
+
+size_t GetStringSize(const char* s) { return strlen(s); }
+size_t GetStringSize(const std::string& s) { return s.size(); }
+
+template<typename String, typename... Strings>
+size_t GetStringSize(const String& s, Strings... strs)
+{
+	return GetStringSize(s) + GetStringSize(strs...);
+}
+
+void AppendToString(std::string* concat_str) { return; }
+
+template<typename String, typename... Strings>
+void AppendToString(std::string* concat_str ,const String& s, Strings... strs)
+{
+	concat_str->append(s);
+	AppendToString(concat_str, strs...);
+}
+
+
+
+template<typename String, typename... Strings>
+std::string StrCat(const String& s, Strings... strs)
+{
+	size_t total_size = GetStringSize(s, strs...);
+
+	std::string concat_str;
+	concat_str.reserve(total_size);
+
+	concat_str = s;
+
+	AppendToString(&concat_str, strs...);
+
+	return concat_str;
+}
+
+template<typename Int, typename... Ints>
+Int diff_from(Int start, Ints...nums)
+{
+	return (start - ... - nums);
+}
+
+class A
+{
+public:
+	void do_something(int x) const
+	{
+		std::cout << "Do something with" << x << std::endl;
+	}
+};
+
+template<typename T, typename... Ints>
+void do_manythings(const T& t, Ints... nums)
+{
+	(t.do_something(nums), ...);
+}
+
+//int main()
+//{
+//	A a;
+// do_manythings(a, 1,3,2,4);
+//
+//
+//}

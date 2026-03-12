@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string.h>
 #include <vector>
+#include <utility>
 
 
 class MyString
@@ -14,12 +15,14 @@ class MyString
 
 public:
 
+	MyString();
 	MyString(const char* name);
 	MyString(char c);
 
 
 	explicit MyString(int capacity) :memory_capacity(capacity) , string_content(nullptr), len(capacity){}
 	MyString(const MyString& s);
+	MyString(MyString&& str) noexcept;
 
 	~MyString();
 
@@ -63,6 +66,20 @@ public:
 	MyString& operator=(const MyString& s)
 	{
 		return assign(s);
+	}
+
+	MyString& operator=(MyString&& s)
+	{
+		std::cout << "이동@" << std::endl;
+		len = s.len;
+		string_content = s.string_content;
+		memory_capacity = s.memory_capacity;
+
+		s.string_content = nullptr;
+		s.memory_capacity = 0;
+		s.len = 0;
+
+		return *this;
 	}
 
 	char& operator[](const int index)
@@ -151,25 +168,48 @@ public:
 	}
 };
 
+template<typename T>
+void my_swap(T& a, T& b)
+{
+	T temp(std::move(a));
+	a = std::move(b);
+	b = std::move(temp);
+}
+
 //int main()
 //{
-//	MyString str1("i am ii");
-//	MyString str2(" james");
+//	
+//	MyString str1("abc");
+//	MyString str2("def");
 //
-//	std::cout << str1[2];
+//	std::cout << "스왑 전 ------------" << std::endl;
+//	str1.println();
+//	str2.println();
 //
-//	str1[2] = 'v';
+//	std::cout << "스왑 후 ------------" << std::endl;
 //
+//	my_swap(str1, str2);
 //
-//	std::cout << str1[2];
+//	str1.println();
+//	str2.println();
 //
 //
 //	return 0;
+//
 //}
 
 
+MyString::MyString()
+{
+	std::cout << "생성자 호출!" << std::endl;
+	len = 0;
+	memory_capacity = 0;
+	string_content = nullptr;
+}
+
 MyString::MyString(const char* name)
 {
+	std::cout << "생성자 호출!" << std::endl;
 	len = strlen(name);
 	string_content = new char[len];
 	memory_capacity = len;
@@ -182,6 +222,7 @@ MyString::MyString(const char* name)
 
 MyString::MyString(char c)
 {
+	std::cout << "생성자 호출!" << std::endl;
 	string_content = new char[1];
 	len = 1;
 	memory_capacity = 1;
@@ -190,6 +231,7 @@ MyString::MyString(char c)
 
 MyString::MyString(const MyString& s)
 {
+	std::cout << "복사 생성자 호출!" << std::endl;
 	len = s.len;
 	string_content = new char[s.len];
 	memory_capacity = s.memory_capacity;
@@ -198,6 +240,18 @@ MyString::MyString(const MyString& s)
 	{
 		string_content[i] = s.string_content[i];
 	}
+
+}
+
+MyString::MyString(MyString&& str)noexcept
+{
+	std::cout << "이동 생성자 호출!" << std::endl;
+
+	len = str.len;
+	string_content = str.string_content;
+	memory_capacity = str.memory_capacity;
+
+	str.string_content = nullptr;
 }
 
 MyString::~MyString()
@@ -226,6 +280,7 @@ void MyString::println()
 
 MyString& MyString::assign(const MyString& str)
 {
+	std::cout << "복사!" << std::endl;
 	len = str.len;
 
 	if (len > memory_capacity)
@@ -236,7 +291,7 @@ MyString& MyString::assign(const MyString& str)
 	string_content = new char[str.len];
 
 
-	for (int i = 0; i < i != str.len; i++)
+	for (int i = 0; i != str.len; i++)
 	{
 		string_content[i] = str.string_content[i];
 	}

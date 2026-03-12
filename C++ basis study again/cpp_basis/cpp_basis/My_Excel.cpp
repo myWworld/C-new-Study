@@ -44,13 +44,14 @@ public:
 	int to_numeric() { return data; };
 };
 
-class DateCell : public  Cell
+
+class DateCell :public  Cell
 {
 	std::time_t data;
 
 public:
 
-	DateCell(const std::string& s, int x, int y, Table* t) :Cell(x, y, t), data(data)
+	DateCell(const std::string& s, int x, int y, Table* t) :Cell(x, y, t)
 	{
 		int year = atoi(s.c_str());
 		int month = atoi(s.c_str() + 5);
@@ -83,6 +84,8 @@ public:
 		return static_cast<int> (data);
 	}
 };
+
+
 
 class ExprCell : public Cell
 {

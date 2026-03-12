@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,18 +128,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="MyDeque.h" />
     <ClInclude Include="MyVector.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="templateMetaProgrammig.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Complex.cpp" />
     <ClCompile Include="EmployeeManager.cpp" />
+    <ClCompile Include="for_anything.cpp" />
+    <ClCompile Include="MyDeque.cpp" />
     <ClCompile Include="MyVector.cpp" />
     <ClCompile Include="My_Excel.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="N-dim Array with stride.cpp" />
     <ClCompile Include="N-dimArray.cpp" />
+    <ClCompile Include="rvalue.cpp" />
     <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="templateMetaProgrammig.cpp" />
+    <ClCompile Include="Thread.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
